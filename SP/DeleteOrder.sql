@@ -66,8 +66,8 @@ COMMIT TRAN;
 
 -------------------------------------------------------------------------------
 
-SET @Message = 'Completed SP ' + @SP + '. Duration in minutes:  '   
-   + CONVERT(VARCHAR(12), CONVERT(DECIMAL(6,2),datediff(mi, @StartTime, getdate())));    
+SET @Message = 'Completed SP ' + @SP + '. Duration in Seconds:  '   
+   + CONVERT(VARCHAR(12), CONVERT(DECIMAL(6,2),datediff(S, @StartTime, getdate()))); 
 RAISERROR(@Message, 0,1) WITH NOWAIT;
 EXEC Game.InsertHistory @SP = @SP,
    @Status = 'End',

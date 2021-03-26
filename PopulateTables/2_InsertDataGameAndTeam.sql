@@ -71,9 +71,9 @@ INSERT INTO Game.Team
    (TeamID, [Name], Note)
 VALUES
    (11, 'GoodGuys', 'A group of juniors working on easy stuff'),
-   (12, 'BetterOnes', 'Agile group of developers in their 40+'),
-   (14, 'WorstGuys', 'Advanced team of developers dealing with bad situations'),
-   (15, 'SmartOnes', 'Elite team of developers, with fastest Vacation requests')
+   (12, 'BetterOnes', 'Agile group of developers'),
+   (14, 'WorstGuys', 'Advanced team of developers'),
+   (15, 'SmartOnes', 'Elite team of developers')
 
 SET @Message = CONVERT(VARCHAR(10), @@ROWCOUNT) + ' rows effected. Completed INSERT to table Team';   
 RAISERROR (@Message, 0,1) WITH NOWAIT;
@@ -92,7 +92,6 @@ VALUES
    (102, 15, 10),
    (103, 11, 2),
    (103, 12, 6),
-   (143, 11, 4),
    (104, 14, 8 )
 
 SET @Message = CONVERT(VARCHAR(10), @@ROWCOUNT) + ' rows effected. Completed INSERT to table Team';   
@@ -103,8 +102,8 @@ EXEC Game.InsertHistory @SP = @SP,
 
 -------------------------------------------------------------------------------
 
-SET @Message = 'Completed SP ' + @SP + '. Duration in minutes:  '   
-   + CONVERT(VARCHAR(12), CONVERT(DECIMAL(6,2),datediff(mi, @StartTime, getdate())));    
+SET @Message = 'Completed SP ' + @SP + '. Duration in Seconds:  '   
+   + CONVERT(VARCHAR(12), CONVERT(DECIMAL(6,2),datediff(S, @StartTime, getdate()))); 
 RAISERROR(@Message, 0,1) WITH NOWAIT;
 EXEC Game.InsertHistory @SP = @SP,
    @Status = 'End',

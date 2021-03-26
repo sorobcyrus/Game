@@ -70,8 +70,8 @@ SET @Message = 'Completed SP CreateTables';
 RAISERROR(@Message, 0,1) WITH NOWAIT;
 -------------------------------------------------------------------------------
 
-SET @Message = 'Completed, duration in minutes:  '   
-   + CONVERT(VARCHAR(12), CONVERT(DECIMAL(6,2),datediff(mi, @StartTime, getdate())));    
+SET @Message = 'Completed, duration in Seconds:  '   
+   + CONVERT(VARCHAR(12), CONVERT(DECIMAL(6,2),datediff(S, @StartTime, getdate())));    
 
 END TRY
 

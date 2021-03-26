@@ -54,7 +54,7 @@ BEGIN
         [Name]          VARCHAR(50)     NOT NULL,
         NumValue        INT             NOT NULL,
         CharValue       VARCHAR(20)     NULL,
-        Note            varchar(250)    NULL
+        Note            VARCHAR(250)    NULL
     );
 
     SET @Message = 'Completed CREATE TABLE Game.Parameter.';
@@ -82,7 +82,7 @@ BEGIN
     CREATE TABLE Game.[Partner]
     (
         PartnerID    TINYINT         NOT NULL,
-        [Name]       VARCHAR(50) NOT NULL,
+        [Name]       NVARCHAR(50) NOT NULL,
         CONSTRAINT PK_Partner_PartnerID PRIMARY KEY CLUSTERED(PartnerID)
     );
 
@@ -111,11 +111,11 @@ BEGIN
     CREATE TABLE Game.[PartnerInfo]
     (
         PartnerID       TINYINT         NOT NULL,
-        Website         VARCHAR(250)    NULL,
+        Website         NVARCHAR(250)    NULL,
         City            VARCHAR(50)     NOT NULL,
         [State]         VARCHAR(2)      NOT NULL,
         Country         VARCHAR(50)     NULL,
-        Note            VARCHAR(250)    NULL,
+        Note            NVARCHAR(250)    NULL,
         CONSTRAINT PK_PartnerInfo_PartnerID PRIMARY KEY CLUSTERED(PartnerID)
     );
 
@@ -146,7 +146,7 @@ BEGIN
         GameID       TINYINT        NOT NULL,
         TypeID       TINYINT        NOT NULL,
         PartnerID    TINYINT        NOT NULL,
-        [Name]       VARCHAR(50)    NOT NULL,
+        [Name]		NVARCHAR(50)	NOT NULL,
         Price        MONEY          NOT NULL,  
         Note         VARCHAR(250)   NULL,
         CONSTRAINT PK_Game_GameID PRIMARY KEY CLUSTERED(GameID),
@@ -271,7 +271,7 @@ BEGIN
         OrderID         INT         NOT NULL,
         GameID          TINYINT     NOT NULL,
         RetailerID      TINYINT     NOT NULL,
-        OrderDate       DATETIME    NOT NULL,
+        OrderDate       DATE	    NOT NULL,
         Quantity        INT         NOT NULL,
         TotalAmount     MONEY       NOT NULL,
         CONSTRAINT PK_Order_OrderID PRIMARY KEY CLUSTERED(OrderID),
@@ -305,7 +305,7 @@ BEGIN
     (
         RetailerID  TINYINT         NOT NULL,
 		DiscountID	TINYINT			NOT NULL,
-        [Name]      VARCHAR(50)     NOT NULL,
+        [Name]      NVARCHAR(50)     NOT NULL,
         Website     VARCHAR(250)    NOT NULL,
         [Address]   VARCHAR(500)    NULL,
         City        VARCHAR(50)     NULL,
