@@ -1,19 +1,19 @@
 # Game
- OLTP side of Data warehouse system.
+ OLTP side of Data warehouse system. <br />
 
  ### This is the first part of a two part system
- 1- OLTP: This is the OLTP side. 
- 2- DW: Data Warehouse side is under GameDW repository
+ 1- OLTP: This is the OLTP side. <br />
+ 2- DW: Data Warehouse side is under GameDW repository. <br />
 
 ## Manual Installation
-1- Create a "Game" database.
-2- Run the script in "Schema" Folder.
-3- Run all the scripts in "SP" folder, and ignore the warnings (missing objects).
-4- Run the script in "RebuildTables" Folder.
-5- Run Script in "Populatedtables" Folder.
-6- Run Script in "Views" Folder.
-7- In the stored procedure "EXEC Game.CreateFKs".
-8- Run the script below to add a couple of order to your order table:
+1- Create a "Game" database. <br />
+2- Run the script in "Schema" Folder. <br />
+3- Run all the scripts in "SP" folder, and ignore the warnings (missing objects). <br />
+4- Run the script in "RebuildTables" Folder. <br />
+5- Run Script in "Populatedtables" Folder. <br />
+6- Run Script in "Views" Folder. <br />
+7- In the stored procedure "EXEC Game.CreateFKs". <br />
+8- Run the script below to add a couple of order to your order table: <br />
 
 EXEC game.InsertOrder @GameID = 101,
                 	@RetailerID = 101,
@@ -26,9 +26,9 @@ EXEC game.InsertOrder @GameID = 102,
                 	@Quantity = 1100;                    
 
 ## Using SSIS packages
-1- Download the zip file into local (C:\GameDW\GameOLTP).
-2- Change the connection to OLTP_Connection according to your environment.
-3- Run BuildOLTP package to create the OLTP side.
+1- Download the zip file into local (C:\GameDW\GameOLTP). <br />
+2- Change the connection to OLTP_Connection according to your environment. <br />
+3- Run BuildOLTP package to create the OLTP side. <br />
 
-Please Note: ImportFromCSV and ExportToCSV packages will require the CSV files to be present (included in the download).
+Please Note: ImportFromCSV and ExportToCSV packages will require the CSV files to be present (included in the download). <br />
 
