@@ -1,9 +1,5 @@
 # Game
- OLTP side of Data warehouse system. <br />
-
- ### This is the first part of a two part system
- 1- OLTP: This is the OLTP side. <br />
- 2- DW: Data Warehouse side is under GameDW repository. <br />
+ An OLTP sample. This is a very small data model meant to provide a quick overlook desgining an OLTP system <br />
 
 ## Manual Installation
 1- Create a "Game" database. <br />
