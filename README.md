@@ -1,5 +1,5 @@
 # Game
- An OLTP sample. This is a very small data model meant to provide a quick overlook on how to design an OLTP system <br />
+ A small OLTP sample. This is a very small data model meant to provide a quick overlook on how to design an OLTP system <br />
 
 ## Manual Installation
 1- Create a "Game" database. <br />
